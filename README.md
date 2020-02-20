@@ -65,7 +65,7 @@ class A extends Model
     
     public function b()
     {
-        return $this->hasMany('B', ['f1', 'f2'], ['l1', 'l2']);
+        return $this->hasMany('B', ['b_f1', 'b_f2'], ['a_f1', 'a_f2']);
     }
 }
 ```
@@ -83,7 +83,7 @@ class B extends Model
     
     public function a()
     {
-        return $this->belongsTo('A', ['f1', 'f2'], ['l1', 'l2']);
+        return $this->belongsTo('A', ['a_f1', 'a_f2'], ['b_f1', 'b_f2']);
     }
 }
 ```
@@ -92,7 +92,7 @@ class B extends Model
 **Compoships** only supports the following Laravel's Eloquent relationships:
 
 * hasOne
-* HasMany
+* hasMany
 * belongsTo
 
 ## Disclaimer
